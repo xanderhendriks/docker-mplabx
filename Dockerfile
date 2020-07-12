@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Bruno Binet <bruno.binet@helioslite.com>
+MAINTAINER Xander Hendriks <xander.hendriks@nx-solutions.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 

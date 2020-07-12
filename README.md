@@ -4,6 +4,7 @@ docker-mplabx
 [MPLABX](https://github.com/xanderhendriks/mplabx): the MPLAB X Integrated Development
 Environment docker container.
 
+Based on [Bruno Binet's MPLABX Docker](https://github.com/bbinet/docker-mplabx/blob/master/Dockerfile)
 
 Build
 -----
