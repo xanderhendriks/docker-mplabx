@@ -28,20 +28,17 @@ Xorg server. You may also need to run command `xhost +` on the host.
 
     $ docker pull xanderhendriks/mplabx
 
+With GUI:
     $ docker run -it --name mplabx \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -v /path/to/mplab/projects:/path/to/mplab/projects \
-        -e DISPLAY=unix$DISPLAY \
+        -v /path/to/mplab/projects:/mount \
+        -e DISPLAY=<IP>:0.0 \
+        --mac-address=<MAC ADDRESS>
+        --entrypoint /opt/microchip/mplabx/v5.40/mplab_platform/bin/mplab_ide 
         xanderhendriks/mplabx
 
-In order to program PIC microcontrollers, the mplabx container need to connect
-to the USB PIC programmer, so you may want to give it access to your USB
-devices with:
-
-    $ docker run -it --name mplabx \
-        --privileged \
-        -v /dev/bus/usb:/dev/bus/usb \
-        -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -v /path/to/mplab/projects:/path/to/mplab/projects \
-        -e DISPLAY=unix$DISPLAY \
+Without GUI:
+    $ docker run -it 
+        -v /path/to/mplab/projects:/mount
+        --mac-address=00:ff:7d:ef:d0:e5
         xanderhendriks/mplabx
